@@ -1,0 +1,6 @@
+framework module Pods_DwarfTracker {
+  umbrella header "Pods-DwarfTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

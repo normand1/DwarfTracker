@@ -1,0 +1,51 @@
+---
+swagger: "2.0"
+info:
+  description: "Dwarf Tracker endpoints"
+  version: "0.0.1"
+  title: "Dwarf Tracker Service API"
+host: "localhost:3000"
+schemes:
+- "http"
+produces:
+- "application/json"
+paths:
+  /dwarf:
+    post:
+      summary: "Post a new Dwarf"
+      description: "endpoint for posting a newly created dwarf to the server"
+      operationId: "postDwarf"
+      parameters:
+        - name: payload
+          in: body
+          required: true
+          description: A single JSON object containing the dwarf definition
+          schema:
+            $ref: '#/definitions/Dwarf'
+      responses: 
+        200:
+          description: indicates a successful update
+    get:
+      summary: "All dwarves"
+      description: "Gets all dwarves"
+      operationId: getDwarves
+      responses:
+        200:
+          description: "An array of dwarf objects"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Dwarf'
+   
+definitions:
+
+  Dwarf:
+    type: object
+    description: a short sturdy creature fond of drink and industry!
+    properties:
+      name:
+        type: string
+      age: 
+        type: string
+      id:
+        type: string
